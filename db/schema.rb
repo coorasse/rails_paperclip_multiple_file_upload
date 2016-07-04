@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20160704100515) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.boolean  "primary"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.boolean  "primary",            default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.index ["gallery_id"], name: "index_paintings_on_gallery_id"
   end
 

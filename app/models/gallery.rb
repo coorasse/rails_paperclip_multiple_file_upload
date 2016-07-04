@@ -8,7 +8,6 @@ class Gallery < ApplicationRecord
   private
 
   def primary_painting_setup
-    puts "candidate: #{paintings.select(&:primary?).first}"
     self.primary_painting = paintings.any? ? paintings.select(&:primary?).first || paintings.first : nil
   end
 end

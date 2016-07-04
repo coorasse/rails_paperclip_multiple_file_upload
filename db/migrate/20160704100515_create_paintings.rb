@@ -4,7 +4,7 @@ class CreatePaintings < ActiveRecord::Migration[5.0]
       t.string :title
       t.references :gallery, foreign_key: true
       t.attachment :image
-      t.boolean :primary
+      t.boolean :primary, default: false
 
       t.timestamps
     end
