@@ -1,0 +1,19 @@
+p#notice
+  = notice
+
+p
+  strong Title:
+  = @gallery.title
+
+p
+  strong Primary Painting:
+  = image_tag @gallery.primary_painting.image.url(:thumb)
+p
+  strong All Paintings
+  - @gallery.paintings.each do |painting|
+    = image_tag painting.image.url(:thumb)
+
+
+= link_to 'Edit', edit_gallery_path(@gallery)
+' |
+= link_to 'Back', galleries_path

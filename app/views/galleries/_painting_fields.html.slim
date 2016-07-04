@@ -1,0 +1,7 @@
+.col-xs-3.nested-fields.painting-box
+  = f.input :image, label: false, input_html: {class: 'form-control-file'}
+  div[data-image-preview]
+    - if f.object.image.present?
+      = image_tag f.object.image.url(:thumb)
+  = f.input :primary
+  = link_to_remove_association 'remove painting', f

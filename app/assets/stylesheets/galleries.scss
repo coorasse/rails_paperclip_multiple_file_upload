@@ -1,0 +1,29 @@
+.thumb {
+  max-height: 100px;
+}
+
+.file input {
+  opacity: 1 !important;
+  width: 100%;
+}
+
+.painting-box {
+  border: 1px solid black;
+  height: 16rem;
+}
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+
+.has-advanced-upload {
+  .box__dragndrop {
+    display: inline;
+    &.is-dragover {
+      background-color: grey;
+    }
+  }
+}

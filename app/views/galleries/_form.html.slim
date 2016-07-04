@@ -1,0 +1,21 @@
+= simple_form_for gallery do |f|
+  - if gallery.errors.any?
+    #error_explanation
+      h2
+        = pluralize(gallery.errors.count, "error")
+        ' prohibited this gallery from being saved:
+
+        ul
+          - gallery.errors.full_messages.each do |message|
+            li = message
+  = f.input :title
+
+  h3 Paintings
+  #paintings.row
+    = f.simple_fields_for :paintings do |painting|
+      = render 'painting_fields', f: painting
+    .links
+      = link_to_add_association 'add painting', f, :paintings, class: 'btn btn-invisible'
+  .actions
+    = f.submit class: 'btn btn-primary'
+  #preview
