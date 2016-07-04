@@ -1,6 +1,6 @@
 class @Gallery
   constructor: ->
-    $(document).on 'change', 'input[type=file]', (el)->
+    $(document).on 'change', 'input[type=file]', (el)=>
       console.log 'input changed'
       @readURL(el.target)
       #@addPainting()
